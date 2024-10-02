@@ -1,10 +1,10 @@
 # Performance
 # For geom, we obtain its performance by the source code of the authors but condense graph by our package for other experiments except performance.
 # For sfgc, we obtain its performance by the source code of the authors.
-for method in random herding kcenter averaging gcondx vng gcondx geom sfgc gcsntk doscond gcond msgc sgdd; do
-  for dataset in cora citeseer flickr; do
+for method in random herding kcenter averaging vng gcondx geom sfgc gcsntk doscond gcond msgc sgdd gcdm; do
+  for dataset in cora citeseer pubmed ogbn-arxiv flickr reddit yelp; do
     case $dataset in
-      cora)
+      cora citeseer)
         for r in 0.1 0.25 0.5; do
           python ../train_all.py -M $method -D $dataset -R $r
         done
@@ -29,6 +29,6 @@ for method in random herding kcenter averaging gcondx vng gcondx geom sfgc gcsnt
 done
 
 # Whole results
-for dataset in cora citeseer ogbn-arxiv flickr reddit; do
+for dataset in cora citeseer ogbn-arxiv flickr reddit yelp; do
   python ../run_eval.py -D $dataset -W
 done
