@@ -4,8 +4,13 @@
 for method in random herding kcenter averaging vng gcondx geom sfgc gcsntk doscond gcond msgc sgdd gcdm; do
   for dataset in cora citeseer pubmed ogbn-arxiv flickr reddit yelp; do
     case $dataset in
-      cora citeseer)
+      cora|citeseer)
         for r in 0.1 0.25 0.5; do
+          python ../train_all.py -M $method -D $dataset -R $r
+        done
+        ;;
+      pubmed)
+        for r in 0.01 0.1 0.5; do
           python ../train_all.py -M $method -D $dataset -R $r
         done
         ;;
@@ -19,7 +24,7 @@ for method in random herding kcenter averaging vng gcondx geom sfgc gcsntk dosco
           python ../train_all.py -M $method -D $dataset -R $r
         done
         ;;
-      reddit)
+      reddit|yelp)
         for r in 0.0005 0.001 0.002; do
           python ../train_all.py -M $method -D $dataset -R $r
         done
