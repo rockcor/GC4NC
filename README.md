@@ -14,10 +14,11 @@ Our systematic evaluation offers novel insights into how condensed graphs behave
 
 Please see `requirements.txt`.
 
-<!--## Download Datasets
+## Download Datasets
 
 For cora, citeseer, flickr, reddit and yelp, the pyg or dgl will directly download them.
-For arxiv, we use the datasets provided by [GraphSAINT](https://github.com/GraphSAINT/GraphSAINT). Our code will also automatically download it.-->
+For arxiv, we use the datasets provided by [GraphSAINT](https://github.com/GraphSAINT/GraphSAINT). Our code will also automatically download it.
+You can specify the load and save path by `python train_all.py --save_path xxx --load_path xxx`
 
 
 [//]: # (# Abstract)
