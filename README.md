@@ -41,21 +41,21 @@ You can specify the load and save path by `python train_all.py --save_path xxx -
 
 All the scripts are in `benchmark/scripts` folder.
 
-For Table 1, use `sh performacne.sh`.
+For Table 1, use `sh benchmark/scripts/performacne.sh`.
 
-For Table 2, use `sh privacy.sh`.
+For Table 2, use `sh benchmark/scripts/privacy.sh`.
 
-For Table 3, use `sh robustness.sh`.
+For Table 3, use `sh benchmark/scripts/robustness.sh`.
 
-For Table 4, use `sh nas.sh`.
+For Table 4, use `sh benchmark/scripts/nas.sh`.
 
-For Table 5, use `sh graph_property_preservation.sh`.
+For Table 5, use `sh benchmark/scripts/graph_property_preservation.sh`.
 
-For Figure 3, use `sh scalability.sh`.
+For Figure 3, use `sh benchmark/scripts/scalability.sh`.
 
-For Figure 4, use `sh transferability.sh`.
+For Figure 4, use `sh benchmark/scripts/transferability.sh`.
 
-For Figure 5, use `sh data_initialization.sh`.
+For Figure 5, use `sh benchmark/scripts/data_initialization.sh`.
 
 
 
