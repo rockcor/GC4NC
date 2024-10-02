@@ -178,6 +178,8 @@ def method_config(args):
 @click.option('--save_path', '--sp', default='../checkpoints', show_default=True, help='save path for synthetic graph')
 @click.option('--load_path', '--lp', default='../../data', show_default=True, help='save path for synthetic graph')
 @click.option('--eval_whole', '-W', is_flag=True, show_default=True, help='if run on whole graph')
+@click.option('--eval_mia', '--emia', is_flag=True, show_default=True, help='if run on whole graph')
+
 @click.option('--with_structure', default=1, show_default=True, help='if synthesizing structure')
 # ======================================simgc====================================== #
 @click.option('--feat_alpha', default=10, show_default=True, help='feature loss weight')
