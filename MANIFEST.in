@@ -1,4 +1,0 @@
-recursive-include graphslim/configs *
-recursive-include graphslim/sparsification/fixed_idx *
-exclude graphslim/train_all.py
-recursive-exclude graphslim/checkpoint *
