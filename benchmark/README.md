@@ -38,18 +38,24 @@ For arxiv, we use the datasets provided by [GraphSAINT](https://github.com/Graph
 
 ## Benchmark Reproduction
 
-All the scripts are in `benchmark` folder.
+All the scripts are in `benchmark/scripts` folder.
 
-For Table 1 7 8, use `sh performacne.sh`.
+For Table 1, use `sh performacne.sh`.
+
+For Table 2, use `sh privacy.sh`.
+
+For Table 3, use `sh robustness.sh`.
+
+For Table 4, use `sh nas.sh`.
+
+For Table 5, use `sh graph_property_preservation.sh`.
 
 For Figure 3, use `sh scalability.sh`.
 
-For Figure 4, use `sh data_initialization.sh`.
+For Figure 4, use `sh transferability.sh`.
 
-For Figure 5 9, use `sh transferability.sh`.
+For Figure 5, use `sh data_initialization.sh`.
 
-For Table 2, use `sh nas.sh`.
 
-For Table 3 10 11, use `sh graph_property_preservation.sh`.
 
-For Table 4 12, use `sh robustness.sh`.
+
