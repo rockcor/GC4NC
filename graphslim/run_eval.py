@@ -14,13 +14,19 @@ if __name__ == '__main__':
     if args.eval_whole:
         # evaluator = PropertyEvaluator(args)
         evaluator = Evaluator(args)
-        evaluator.evaluate(data, reduced=False, model_type='GCN')
-        #evaluator.MIA_evaluate(data, reduced=False, model_type='GCN')
+        if args.eval_mia:
+            evaluator.MIA_evaluate(data, reduced=False, model_type='GCN')
+        else:
+            evaluator.evaluate(data, reduced=False, model_type='GCN')
+
     else:
         if args.attack is not None:
             data = attack(data, args)
             args.save_path = f'checkpoints'
         # evaluator = PropertyEvaluator(data, args, reduced=True)
         #evaluator = PropertyEvaluator(args)
-        evaluator.evaluate(data, reduced=True, model_type='GCN')
+        if args.eval_mia:
+            evaluator.MIA_evaluate(data, reduced=True, model_type='GCN')
+        else:
+            evaluator.evaluate(data, reduced=True, model_type='GCN')
         #evaluator.MIA_evaluate(data, reduced=True, model_type='GCN')
