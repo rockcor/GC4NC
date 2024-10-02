@@ -1,10 +1,13 @@
 [//]: # (# Preparation)
 
-# GC-Bench: A Benchmark Framework for Graph Condensation with New Insights
+# GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights
 
-Graph condensation (GC) is an emerging technique designed to learn a significantly smaller graph that retains the essential information of the original graph.  Despite the rapid development of GC methods, a systematic evaluation framework remains absent, which is necessary to clarify the critical designs for particular evaluative aspects. Furthermore, several meaningful questions have not been investigated, such as whether GC inherently preserves certain graph properties and offers robustness even without targeted design efforts. Here, we introduce GC-Bench, a comprehensive framework to evaluate recent GC methods across multiple dimensions and generate new insights. Our experimental findings provide deeper insights into the GC process and the characteristics of condensed graphs, guiding future efforts in enhancing performance and exploring new applications.
-
-
+Graph condensation (GC) is an emerging technique designed to learn a significantly smaller graph that retains the essential information of the original graph. This condensed graph has shown promise in accelerating graph neural networks while preserving performance comparable to those achieved with the original, larger graphs. 
+Additionally, this technique facilitates downstream applications like neural architecture search and deepens our understanding of redundancies in large graphs. 
+Despite the rapid development of GC methods, particularly for node classification, a unified evaluation framework is still lacking to systematically compare different GC methods or clarify key design choices for improving their effectiveness. 
+To bridge these gaps, we introduce \textbf{GC4NC}, a comprehensive framework for evaluating diverse GC methods on node classification across multiple dimensions including performance, efficiency,  privacy preservation, 
+denoising effects, NAS effectiveness, and transferability.  
+Our systematic evaluation offers novel insights into how condensed graphs behave and the critical design choices that drive their success. These findings pave the way for future advancements in GC methods, enhancing both performance and expanding their real-world applications.
 
 
 ## Requirements
