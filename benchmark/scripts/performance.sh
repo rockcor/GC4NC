@@ -1,6 +1,7 @@
 # Performance
 # For geom, we obtain its performance by the source code of the authors but condense graph by our package for other experiments except performance.
 # For sfgc, we obtain its performance by the source code of the authors.
+# If you want to run gdem, please first run their raw repo to generate spectral decompositon and put them in corresponding data folder.
 for method in random herding kcenter averaging vng gcondx geom sfgc gcsntk doscond gcond msgc sgdd gcdm; do
   for dataset in cora citeseer pubmed ogbn-arxiv flickr reddit yelp; do
     case $dataset in
