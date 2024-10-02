@@ -1,3 +1,4 @@
+#!/bin/bash
 # Data Initialization
 for method in gcondx geom doscond gcond msgc; do
   for dataset in cora ogbn-arxiv reddit; do

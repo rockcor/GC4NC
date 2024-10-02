@@ -1,3 +1,4 @@
+#!/bin/bash
 # Scalability
 for method in random herding kcenter gcondx geom gcond msgc; do
   for dataset in cora citeseer ogbn-arxiv flickr reddit; do

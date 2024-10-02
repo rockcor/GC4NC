@@ -1,3 +1,4 @@
+#!/bin/bash
 # Neural Architecture Search
 # Must obtain condensed graph of each methods by running performance.sh before running this script.
 for method in random kcenter gcondx geom sfgc doscond gcond msgc; do

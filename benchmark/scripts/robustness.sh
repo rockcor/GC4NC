@@ -1,3 +1,4 @@
+#!/bin/bash
 # Robustness
 for method in random kcenter gcondx geom gcond; do
   for dataset in cora citeseer flickr; do
