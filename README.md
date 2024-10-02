@@ -20,26 +20,11 @@ For cora, citeseer, flickr, reddit and yelp, the pyg or dgl will directly downlo
 For arxiv, we use the datasets provided by [GraphSAINT](https://github.com/GraphSAINT/GraphSAINT). Our code will also automatically download it.
 You can specify the load and save path by `python train_all.py --save_path xxx --load_path xxx`
 
-
-[//]: # (# Abstract)
-
-[//]: # ()
-
-[//]: # (Graph reduction for all graph algorithms especially for graph neural networks &#40;GNNs&#41;.)
-
-[//]: # (This package aims to reduce the large, original graph into a small, synthetic and highly-informative graph.)
-
-[//]: # ()
-
-[//]: # (# Features)
-
-[//]: # (* Covering 3 mainstream reduction strategies: Sparsificaiton, Coarsening and Condensation)
-
-[//]: # (* Unified test tools for easily producing benchmarks)
-
 ## Benchmark Reproduction
 
-All the scripts are in `benchmark/scripts` folder.
+Test environments by `sh test_main.sh` and `sh test_eval.sh`.
+
+All the scripts are in `benchmark/scripts` folder. Please first generate the condensed graph by running `sh benchmark/scripts/performacne.sh`.
 
 For Table 1, use `sh benchmark/scripts/performacne.sh`.
 
