@@ -12,7 +12,7 @@ Our systematic evaluation offers novel insights into how condensed graphs behave
 
 ## Requirements
 
-Please see `requirements.txt`.
+Please use `pip install -r benchmark/requirements.txt`.
 
 ## Download Datasets
 
