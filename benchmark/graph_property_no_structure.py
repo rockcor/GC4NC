@@ -8,6 +8,8 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 if os.path.abspath('..') not in sys.path:
     sys.path.append(os.path.abspath('..'))
+if os.path.abspath('../..') not in sys.path:
+    sys.path.append(os.path.abspath('../..'))
 from graphslim.config import *
 from graphslim.dataset import *
 from graphslim.evaluation.utils import sparsify

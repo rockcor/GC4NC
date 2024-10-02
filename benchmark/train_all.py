@@ -3,6 +3,8 @@ import sys
 
 if os.path.abspath('../..') not in sys.path:
     sys.path.append(os.path.abspath('../..'))
+if os.path.abspath('..') not in sys.path:
+    sys.path.append(os.path.abspath('..'))
 
 from graphslim.config import get_args
 from graphslim.dataset import *
