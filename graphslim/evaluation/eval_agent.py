@@ -44,7 +44,8 @@ class Evaluator:
         self.args = args
         self.device = args.device
         self.reset_parameters()
-        self.metric = accuracy if args.metric == 'accuracy' else f1_macro
+        self.metric = args.metric
+        #self.metric = accuracy if args.metric == 'accuracy' else f1_macro
 
     def reset_parameters(self):
         """

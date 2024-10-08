@@ -26,8 +26,8 @@ class BaseGNN(nn.Module):
         self.loss = None
 
         if mode == 'eval':
-            self.dropout = 0
-            self.weight_decay = 5e-4
+            self.dropout = args.dropout
+            self.weight_decay = args.eval_wd
         if mode == 'attack':
             self.loss = F.nll_loss
 
@@ -111,6 +111,7 @@ class BaseGNN(nn.Module):
         else:
             adj = normalize_adj_tensor(adj, sparse=is_sparse_tensor(adj))
 
+        self.weight_decay = args.eval_wd
         if self.loss is None:
             if args.method == 'geom' and args.soft_label:
                 self.loss = torch.nn.KLDivLoss(reduction="batchmean", log_target=True)
@@ -123,7 +124,6 @@ class BaseGNN(nn.Module):
                     self.loss = torch.nn.KLDivLoss(reduction="batchmean", log_target=True)
                 else:
                     raise NotImplementedError
-                self.weight_decay = args.eval_wd
             else:
                 labels = to_tensor(label=labels, device=self.device)
                 self.loss = F.nll_loss

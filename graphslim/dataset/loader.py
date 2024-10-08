@@ -105,9 +105,9 @@ class TransAndInd:
             self.feat_full = scaler.transform(self.x)
             self.feat_full = torch.from_numpy(self.feat_full).float()
         if norm and dataset in ['cora', 'citeseer', 'pubmed']:
-            self.feat_full = self.feat_full - self.feat_full.min()
-            self.feat_full.div_(self.feat_full.sum(dim=-1, keepdim=True).clamp_(min=1.))
-            #self.feat_full = F.normalize(self.feat_full, p=1, dim=1)
+            #self.feat_full = self.feat_full - self.feat_full.min()
+            #self.feat_full.div_(self.feat_full.sum(dim=-1, keepdim=True).clamp_(min=1.))
+            self.feat_full = F.normalize(self.feat_full, p=1, dim=1)
         self.idx_train, self.idx_val, self.idx_test = data.idx_train, data.idx_val, data.idx_test
         # self.nclass = max(self.labels_full).item() + 1
 

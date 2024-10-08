@@ -75,7 +75,7 @@ class GCDM(GCondBase):
 
                         emb_syn_selected = emb_syn[i][st_id:ed_id]
 
-                        # loss_emb += coeff * dist(torch.mean(emb_real_class,dim=0), torch.mean(emb_syn_selected,dim=0), method=args.dis_metric)
+                        #loss_emb += coeff * dist(torch.mean(emb_real_class,dim=0), torch.mean(emb_syn_selected,dim=0), method=args.dis_metric)
                         loss_emb += coeff * dist(emb_real_selected, emb_syn_selected, method=args.dis_metric)
                 loss_avg += loss_emb.item()
 
@@ -104,7 +104,7 @@ class GCDM(GCondBase):
                 best_val = self.intermediate_evaluation(best_val, loss_avg)
 
         return data
-        
+
 def dist(x, y, method='l1'):
     """Distance objectives
     """
