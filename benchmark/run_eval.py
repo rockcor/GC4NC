@@ -17,9 +17,9 @@ if __name__ == '__main__':
         # evaluator = PropertyEvaluator(args)
         evaluator = Evaluator(args)
         if args.eval_mia:
-            evaluator.MIA_evaluate(data, reduced=False, model_type='GCN')
+            evaluator.MIA_evaluate(data, reduced=False, model_type=args.eval_model)
         else:
-            evaluator.evaluate(data, reduced=False, model_type='GCN')
+            evaluator.evaluate(data, reduced=False, model_type=args.eval_model)
 
     else:
         if args.attack is not None:
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         #evaluator = PropertyEvaluator(args)
         evaluator = Evaluator(args)
         if args.eval_mia:
-            evaluator.MIA_evaluate(data, reduced=True, model_type='GCN')
+            evaluator.MIA_evaluate(data, reduced=True, model_type=args.eval_model)
         else:
-            evaluator.evaluate(data, reduced=True, model_type='GCN')
+            evaluator.evaluate(data, reduced=True, model_type=args.eval_model)
         #evaluator.MIA_evaluate(data, reduced=True, model_type='GCN')

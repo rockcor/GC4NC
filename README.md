@@ -22,7 +22,7 @@ You can specify the load and save path by `python train_all.py --save_path xxx -
 
 ## Benchmark Reproduction
 
-Test environments by `sh test_main.sh` and `sh test_eval.sh`.
+To test environments, please try `cd benchmark` and `python train_all.py -D cora -M gcond -G <gpu_id>` in command line. Alternately, you can submit jobs by `sh test_main.sh` and `sh test_eval.sh`.
 
 All the scripts are in `benchmark/scripts` folder. Please first generate the condensed graph by running `sh benchmark/scripts/performacne.sh`.
 

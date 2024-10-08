@@ -97,7 +97,7 @@ class TransAndInd:
         self.num_nodes = data.num_nodes
         self.train_mask, self.val_mask, self.test_mask = data.train_mask, data.val_mask, data.test_mask
         self.pyg_saint(data)
-        if dataset in ['flickr', 'reddit', 'ogbn-arxiv']:
+        if dataset in ['flickr', 'reddit', 'ogbn-arxiv', 'yelp']:
             self.edge_index = to_undirected(self.edge_index, self.num_nodes)
             feat_train = self.x[data.idx_train]
             scaler = StandardScaler()
@@ -105,7 +105,9 @@ class TransAndInd:
             self.feat_full = scaler.transform(self.x)
             self.feat_full = torch.from_numpy(self.feat_full).float()
         if norm and dataset in ['cora', 'citeseer', 'pubmed']:
-            self.feat_full = F.normalize(self.feat_full, p=1, dim=1)
+            self.feat_full = self.feat_full - self.feat_full.min()
+            self.feat_full.div_(self.feat_full.sum(dim=-1, keepdim=True).clamp_(min=1.))
+            #self.feat_full = F.normalize(self.feat_full, p=1, dim=1)
         self.idx_train, self.idx_val, self.idx_test = data.idx_train, data.idx_val, data.idx_test
         # self.nclass = max(self.labels_full).item() + 1
 
@@ -292,9 +294,9 @@ class LargeDataLoader(nn.Module):
         return:
             torch.Tensor, normalized data
         """
-        mean = data.mean(dim=0)  
-        std = data.std(dim=0)  
-        std[std == 0] = 1  
+        mean = data.mean(dim=0)
+        std = data.std(dim=0)
+        std[std == 0] = 1
         normalized_data = (data - mean) / std
         return normalized_data
 
